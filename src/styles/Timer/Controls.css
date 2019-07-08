@@ -1,0 +1,46 @@
+button{
+    height: 100%;
+    width: 50%;
+    border-style: none;
+    overflow: hidden;
+}
+.play{
+    background-color: #28a745;
+}
+.stop{
+    background-color: red;
+}
+.reset{
+    background-color: #007bff;
+}
+.play:hover{
+    background-color: #1e7e34;
+}
+.stop:hover{
+    background-color: darkred;
+}
+.reset:hover{
+    background-color: #0062cc;
+}
+.play:focus{
+    outline: none;
+}
+.stop:focus{
+    outline: none;
+}
+.reset:focus{
+    outline: none;
+}
+i{
+    color: white;
+}
+
+.i-play{
+   padding-left: 50px;  
+}
+.i-stop{
+    padding-left: 50px; 
+}
+.i-reset{
+    padding-right: 50px; 
+}
