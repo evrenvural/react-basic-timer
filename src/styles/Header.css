@@ -1,0 +1,21 @@
+header{
+    height: 100px;
+    width: 100%;
+    background-color: #343a40;
+}
+.content{
+    width: 250px;
+    height: 100px;
+    margin: auto;
+    padding-top: 25px; 
+}
+.fa-hourglass-half{
+    float: left;
+    color: white;
+}
+#text{
+    width: 90%;
+    height: 48px;
+    color: white;
+    text-align: right;
+}
