@@ -4,40 +4,60 @@ import Controls from './Controls';
 import Display from "./Display";
 
 export default class Timer extends Component {
-    constructor(){
+    constructor() {
         super();
 
-        this.state = {play: true}
+        this.state = {
+            play: true,
+            time: 0,
+            seconds: 0
+        }
     }
 
-    start = () =>{
+    start = () => {
         this.setState({
             play: false
         });
     }
 
-    stop = () =>{
+    stop = () => {
         this.setState({
             play: true
         });
     }
 
-    reset = () =>{
+    reset = () => {
         this.setState({
             play: true
         });
     }
+
+    onChangeTime = (seconds) => {
+        seconds = parseInt(seconds);
+
+        if (seconds && typeof seconds === 'number') {
+            if (seconds <= 359999) {
+                this.setState({ seconds: seconds, time: seconds * 1000 });
+            }
+        } 
+        else {
+            this.setState(() => ({ seconds: 0, time: 0 }));
+        }
+    }
+
     render() {
         return (
-            <div id = "timer">
-                <Display 
-
+            <div id="timer">
+                <Display
+                    time={this.state.time}
+                    onChangeTime={this.onChangeTime}
+                    seconds={this.state.seconds}
                 />
-                <Controls 
-                status = {this.state.play}
-                start = {this.start}
-                stop = {this.stop} 
-                reset = {this.reset}    
+                <Controls
+                    status={this.state.play}
+                    start={this.start}
+                    stop={this.stop}
+                    reset={this.reset}
                 />
             </div>
         )
